@@ -31,5 +31,7 @@ public class UserController {
     public User one(@PathVariable Long id) {
         return svc.find(id);
     }
+
+
 }
 
