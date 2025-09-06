@@ -10,6 +10,7 @@
         <option value="$PROJECT_DIR$/Paymentservice/pom.xml" />
         <option value="$PROJECT_DIR$/Productservice/pom.xml" />
         <option value="$PROJECT_DIR$/rapi-gateway/pom.xml" />
+        <option value="$PROJECT_DIR$/pom.xml" />
       </list>
     </option>
   </component>
