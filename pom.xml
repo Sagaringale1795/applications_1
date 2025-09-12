@@ -41,7 +41,7 @@
 	</dependencyManagement>
 
 	<modules>
-		<!-- 👇 Add all modules here -->
+		<!-- Add all modules here -->
 		<module>eureka-server</module>
 		<module>Orderservice</module>
 		<module>Paymentservice</module>
