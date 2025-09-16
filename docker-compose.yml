@@ -87,7 +87,6 @@ services:
     networks:
       - ms-net
 
-
   # ---------------- Eureka Server ----------------
   eureka-server:
     build: ./eureka-server
@@ -101,7 +100,6 @@ services:
       - mysql-product
       - mysql-user
     environment:
-      # if needed; adjust profile or config as required
       - SPRING_PROFILES_ACTIVE=default
     healthcheck:
       test: ["CMD-SHELL", "curl -f http://localhost:8761/actuator/health || exit 1"]
@@ -111,17 +109,13 @@ services:
     networks:
       - ms-net
 
-
   # ---------------- Microservices ----------------
-  # NOTE: We map host port -> container port 8080 for services.
-  # Make sure your Spring Boot apps either use default (8080) or set SERVER_PORT accordingly.
-
   order-service:
     build: ./order-service
     container_name: order-service
     restart: unless-stopped
     ports:
-      - "8081:8080"               # host:container
+      - "8081:8080"
     depends_on:
       - eureka-server
       - mysql-order
@@ -209,9 +203,9 @@ services:
       - ms-net
 
   # ---------------- API Gateway ----------------
-  api-gateway:
-    build: ./api-gateway
-    container_name: api-gateway
+  rapi-gateway:
+    build: ./rapi-gateway
+    container_name: rapi-gateway
     restart: unless-stopped
     ports:
       - "8085:8080"
