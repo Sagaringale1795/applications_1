@@ -18,6 +18,8 @@ pipeline {
       }
     }
 
+
+
     stage('Build Docker Images') {
       steps {
         sh 'docker compose build'
